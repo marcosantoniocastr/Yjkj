@@ -21,15 +21,8 @@
         }
 
         function speech() {
-            var content = document.querySelectorAll('p, span'); 
-            var fullText = "";
-            content.forEach(function (element) {
-                fullText += element.innerText + " ";
-            });
-            if (fullText !== "") {
-                responsiveVoice.speak(fullText, "Spanish Female");
-            }
-            alert("Procesando...");
+            const text = document.querySelector('.article-information').innerText;
+            responsiveVoice.speak(text, "Spanish Latin American");
         }
     </script>
 </head>
