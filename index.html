@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8; /* Fondo suave */
+        }
+    </style>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=jOJHCJES"></script>
+    <script>
+        function openModal() {
+            document.getElementById("modal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.add("hidden");
+        }
+
+        function speech() {
+            var content = document.querySelectorAll('p, span'); 
+            var fullText = "";
+            content.forEach(function (element) {
+                fullText += element.innerText + " ";
+            });
+            if (fullText !== "") {
+                responsiveVoice.speak(fullText, "Spanish Female");
+            }
+            alert("Procesando...");
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-blue-300 text-gray-800 text-center py-6">
+        <h1 class="text-3xl font-bold">Ven, te explicamos con manzanitas</h1>
+    </header>
+
+    <main class="flex-grow p-8">
+        <section class="navegation-body mb-8">
+            <article class="article-information bg-white shadow-md rounded-lg p-6">
+                <button class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-500 transition duration-300 ease-in-out" onclick="speech()">Leer en voz alta</button><br /><br />
+                <p class="mb-4 text-gray-600">¿Sabías que una gran parte de las aplicaciones educativas se centran más en lo más sencillo como primaria, pero no brindan vídeos educativos de secundaria, resoluciones, datos, software para resolver ejercicios, gráficas todo en una sola aplicación?</p>
+                <p class="mb-4 text-gray-600">Es por esto que un grupo de developers decidimos desarrollar una aplicación educativa donde el usuario pueda preguntar, pueda ver y pueda probar distintos software. Decidimos por un nombre técnico <span class="font-bold text-blue-500 cursor-pointer" onclick="openModal()">Mate TIC</span>, la solución a muchos problemas para una comunidad activa sobre matemática secundaria hasta llegar a la universitaria.</p>
+                <p class="mb-4 text-gray-600">Esto es matemática importante de la secundaria para la universidad.<hr class="my-4" />
+                    Toma este camino entendiendo las verdaderas lógicas matemáticas 🧮. <hr class="my-4" />
+                    Un camino te espera, un cambio en tu perspectiva.</p>
+            </article>
+        </section>
+
+        <aside class="text-center mb-8">
+            <a href="Iniciatravesia.html" class="bg-blue-400 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-500 transition">Empezar</a>
+        </aside>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <h4>Con mucho amor ❤️ for developers by Mate TIC 2024</h4>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 w-11/12 md:w-1/3">
+            <h2 class="text-xl font-bold mb-4">Significado de Mate TIC</h2>
+            <p class="text-gray-600">"Mate TIC" es un término que combina "matemáticas" y "tecnología de la información y la comunicación", simbolizando una plataforma que integra herramientas tecnológicas para facilitar el aprendizaje de matemáticas en niveles educativos secundarios y universitarios.</p>
+            <button onclick="closeModal()" class="mt-4 bg-red-500 text-white py-2 px-4 rounded-lg">Cerrar</button>
+        </div>
+    </div>
+</body>
+</html>
